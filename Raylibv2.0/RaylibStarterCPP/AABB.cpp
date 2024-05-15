@@ -54,7 +54,117 @@ bool AABB::Overlaps(const AABB& other) const
 		  || min.x>other.max.x || min.y > other.max.y);
 }
 
-//vec2 AABB::ClosestPoint(const vec2& p) const
-//{
-//	return clamp(p, min, max);
-//}
+vec2 AABB::ClosestPoint(const vec2& p) const
+{
+	return clamp(p, min, max);
+}
+
+void AABB::SetToTransformedBox(const MathClasses::Matrix3& m)
+{
+	if (m.m1 > 0.0f)
+	{
+		min.x += m.m1 * min.x;
+		max.x += m.m1 * max.x;
+	}
+	else
+	{
+		min.x += m.m1 * max.x;
+		max.x += m.m1 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m4 > 0.0f)
+	{
+		min.x += m.m4 * min.x;
+		max.x += m.m4 * max.x;
+	}
+	else
+	{
+		min.x += m.m4 * max.x;
+		max.x += m.m4 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m7 > 0.0f)
+	{
+		min.x += m.m7 * min.x;
+		max.x += m.m7 * max.x;
+	}
+	else
+	{
+		min.x += m.m7 * max.x;
+		max.x += m.m7 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m2 > 0.0f)
+	{
+		min.x += m.m2 * min.x;
+		max.x += m.m2 * max.x;
+	}
+	else
+	{
+		min.x += m.m2 * max.x;
+		max.x += m.m2 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m5 > 0.0f)
+	{
+		min.x += m.m5 * min.x;
+		max.x += m.m5 * max.x;
+	}
+	else
+	{
+		min.x += m.m5 * max.x;
+		max.x += m.m5 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m8 > 0.0f)
+	{
+		min.x += m.m8 * min.x;
+		max.x += m.m8 * max.x;
+	}
+	else
+	{
+		min.x += m.m8 * max.x;
+		max.x += m.m8 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m3 > 0.0f)
+	{
+		min.x += m.m3 * min.x;
+		max.x += m.m3 * max.x;
+	}
+	else
+	{
+		min.x += m.m3 * max.x;
+		max.x += m.m3 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m6 > 0.0f)
+	{
+		min.x += m.m6 * min.x;
+		max.x += m.m6 * max.x;
+	}
+	else
+	{
+		min.x += m.m6 * max.x;
+		max.x += m.m6 * min.x;
+	}
+	//-----------------------------
+
+	if (m.m9 > 0.0f)
+	{
+		min.x += m.m9 * min.x;
+		max.x += m.m9 * max.x;
+	}
+	else
+	{
+		min.x += m.m9 * max.x;
+		max.x += m.m9 * min.x;
+	}
+}
