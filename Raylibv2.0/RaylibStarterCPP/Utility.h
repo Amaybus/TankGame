@@ -1,5 +1,6 @@
 #pragma once
 #include "raylib.h"
+#include "Vector2.h"
 
 constexpr float min(float a, float b)
 {
