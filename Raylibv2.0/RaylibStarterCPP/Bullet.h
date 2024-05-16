@@ -2,6 +2,7 @@
 
 #include "SpriteObject.h"
 #include "Turret.h"
+#include "AABB.h"
 
 class Bullet : public SpriteObject
 {
@@ -14,4 +15,6 @@ protected:
 
 	Texture2D bulletSprite = LoadTexture("res/bulletGreen.png");
 	float bulletSpeed;
+
+	AABB* aabbBullet;
 };

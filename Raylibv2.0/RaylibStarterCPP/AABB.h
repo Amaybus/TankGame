@@ -1,6 +1,5 @@
 #pragma once
 
-#include "Utility.h"
 #include "Vector2.h"
 #include "Matrix3.h"
 
@@ -22,7 +21,7 @@ struct AABB
 	
 	bool Overlaps(const vec2& p) const;
 	bool Overlaps(const AABB& other) const;
-	vec2 ClosestPoint(const vec2& p) const;
+	vec2 ClosestPoint(vec2& p);
 
 	void SetToTransformedBox(const MathClasses::Matrix3& m);
 };

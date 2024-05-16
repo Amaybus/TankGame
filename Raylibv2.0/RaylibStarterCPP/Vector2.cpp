@@ -96,28 +96,6 @@ const float& MathClasses::Vector2::operator[](const int dim) const
 	return data[dim];
 }
 
-float MathClasses::Vector2::Max(float a, float b) const
-{
-	return a > b ? a : b;
-}
-
-Vector2 MathClasses::Vector2::Max(Vector2 lhs, Vector2 rhs)
-{
-	
-	return { Max(lhs.x, rhs.x), Max(lhs.y, rhs.y) };
-
-}
-
-float MathClasses::Vector2::Clamp(float t, float a, float b) const
-{
-	return Max(a, Min(b, t));
-}
-
-Vector2 MathClasses::Vector2::Clamp(Vector2 t, Vector2 lhs, Vector2 rhs)
-{
-	return Max(lhs, Min(rhs, t));
-}
-
 float MathClasses::Vector2::Min(float a, float b) const
 {
 	return a < b ? a : b;
@@ -125,7 +103,27 @@ float MathClasses::Vector2::Min(float a, float b) const
 
 Vector2 MathClasses::Vector2::Min(Vector2 lhs, Vector2 rhs)
 {
-	return { Min(lhs.x, rhs.x), Min(lhs.y, rhs.y) };
+	return { Min(lhs.x,rhs.x), Min(lhs.y,rhs.y) };
+}
+
+float MathClasses::Vector2::Max(float a, float b) const
+{
+	return a > b ? a : b;
+}
+
+Vector2 MathClasses::Vector2::Max(Vector2 lhs, Vector2 rhs)
+{
+	return { Max(lhs.x, rhs.x), Min(lhs.y,rhs.y) };
+}
+
+Vector2 MathClasses::Vector2::Clamp(Vector2& t, Vector2& a, Vector2& b)
+{
+	return Max(a, Min(b, t));
+}
+
+float MathClasses::Vector2::Clamp(float t, float a, float b)
+{
+	return Max(a, Min(b, t));
 }
 
 Vector2 MathClasses::operator*(Vector2 lhsVec, float rhsNum)

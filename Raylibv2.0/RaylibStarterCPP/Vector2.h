@@ -37,8 +37,9 @@ namespace MathClasses
 		float Max(float a, float b) const;
 		Vector2 Max(Vector2 lhs, Vector2 rhs);
 
-		float Clamp(float t, float a, float b) const;
-		Vector2 Clamp(Vector2 t, Vector2 lhs, Vector2 rhs);
+		float Clamp(float t, float a, float b);
+		Vector2 Clamp(Vector2& t, Vector2& a, Vector2& b);
+
 	};
 
 	Vector2 operator*(Vector2 lhsVec, float rhsNum); // Multiplication rhs float

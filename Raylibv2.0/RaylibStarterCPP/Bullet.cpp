@@ -4,6 +4,8 @@ Bullet::Bullet()
 {
 	Sprite = &bulletSprite;
 	bulletSpeed = 300.0f;
+	aabbBullet = new AABB(vec2(bulletSprite.height, 0), vec2(0, bulletSprite.width));
+	
 }
 
 void Bullet::OnUpdate(float deltaTime)
