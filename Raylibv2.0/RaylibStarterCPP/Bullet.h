@@ -10,7 +10,6 @@ class Bullet : public SpriteObject
 public:
 	Bullet();
 	bool IsBulletActive = false;
-	void DestructBullet(float screenWidth, float screenHeight);
 
 protected:
 	void OnUpdate(float deltaTime) override;

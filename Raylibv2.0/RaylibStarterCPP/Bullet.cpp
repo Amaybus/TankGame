@@ -37,13 +37,4 @@ void Bullet::OnDraw()
 
 }
 
-void Bullet::DestructBullet(float screenWidth, float screenHeight)
-{
-	vec3 pos = GetWorldPosition();
-	if (pos.x < 0 || pos.x > screenWidth || pos.y < 0 || pos.y > screenHeight)
-	{
-		delete this;
-		std::cout << "delete";
-	}
-}
 

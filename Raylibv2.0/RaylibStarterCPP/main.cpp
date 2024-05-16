@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
         // Draw
         //----------------------------------------------------------------------------------
 
-        game->Update(deltaTime);
+        game->Update(deltaTime, screenWidth, screenHeight);
         game->Draw();
         //----------------------------------------------------------------------------------
     }

@@ -15,7 +15,7 @@ class Game
 {
 public:
 	void Init();
-	void Update(float deltaTime);
+	void Update(float deltaTime, float screenWidth, float screenHeight);
 	void Draw();
 	void Shutdown();
 
@@ -28,4 +28,5 @@ public:
 
 	std::vector<GameObject*> gameObjects;
 	std::vector<AABB> collisionObjs;
+	std::vector<GameObject*> toDelete;
 };

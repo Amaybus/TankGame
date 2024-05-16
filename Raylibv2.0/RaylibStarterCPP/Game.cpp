@@ -16,8 +16,20 @@ void Game::Init()
 	gameObjects.push_back(obstacle);
 }
 
-void Game::Update(float deltaTime)
+void Game::Update(float deltaTime, float screenWidth, float screenHeight)
 {
+
+	if (toDelete.size() > 0)
+	{
+		for (int i = 0; i < toDelete.size(); i++)
+		{
+			std::cout << toDelete[i];
+			delete toDelete[i];
+		}
+		toDelete.clear();
+	}
+
+
 	if (IsKeyPressed(KEY_SPACE))
 	{
 		bullet = new Bullet;
@@ -35,20 +47,29 @@ void Game::Update(float deltaTime)
 		DrawCircle(corners[3].x, corners[3].y, 5, RED);
 	}
 	
-	bullet->DestructBullet(GetScreenWidth(), GetScreenHeight());
+	if (bullet != nullptr)
+	{
+		vec3 pos = bullet->GetWorldPosition();
+		if (pos.x < 0 || pos.x > screenWidth || pos.y < 0 || pos.y > screenHeight)
+		{
+			toDelete.push_back(bullet);
+			gameObjects.erase(std::find(gameObjects.begin(), gameObjects.end(), bullet));
+			bullet = nullptr;
+		}
+	}
 
 	for (int i = 0; i < gameObjects.size(); i++)
 	{
 		gameObjects[i]->Update(deltaTime);
 	}
 
-	for (int i = 0; i < collisionObjs.size(); i++)
-	{
-		if (bulletAABB->Overlaps(collisionObjs[i]) == true)
-		{
-			std::cout << "hit";
-		}
-	}
+	//for (int i = 0; i < collisionObjs.size(); i++)
+	//{
+	//	if (bulletAABB->Overlaps(collisionObjs[i]) == true)
+	//	{
+	//		std::cout << "hit";
+	//	}
+	//}
 }
 
 void Game::Draw()
