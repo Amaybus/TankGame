@@ -34,6 +34,8 @@ void Game::Update(float deltaTime)
 		DrawCircle(corners[2].x, corners[2].y, 5, RED);
 		DrawCircle(corners[3].x, corners[3].y, 5, RED);
 	}
+	
+	bullet->DestructBullet(GetScreenWidth(), GetScreenHeight());
 
 	for (int i = 0; i < gameObjects.size(); i++)
 	{

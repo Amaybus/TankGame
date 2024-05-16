@@ -28,7 +28,6 @@ void Bullet::OnDraw()
 		 { (float)Sprite->width * Origin.x * scale.x, (float)Sprite->height * Origin.y * scale.y },
 		 rotation,
 		 Color(Tint));
-
 	 //AABB* boundingBox = dynamic_cast<AABB*>(GetChild(0));
 	// std::vector<vec2> corners= aabbBullet->Corners();
 	// DrawCircle(corners[0].x, corners[0].y, 5, RED);
@@ -36,5 +35,15 @@ void Bullet::OnDraw()
 	// DrawCircle(corners[2].x, corners[2].y, 5, RED);
 	// DrawCircle(corners[3].x, corners[3].y, 5, RED);
 
+}
+
+void Bullet::DestructBullet(float screenWidth, float screenHeight)
+{
+	vec3 pos = GetWorldPosition();
+	if (pos.x < 0 || pos.x > screenWidth || pos.y < 0 || pos.y > screenHeight)
+	{
+		delete this;
+		std::cout << "delete";
+	}
 }
 
