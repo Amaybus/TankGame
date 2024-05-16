@@ -2,10 +2,12 @@
 
 #include "Vector2.h"
 #include "Matrix3.h"
+#include "GameObject.h"
+#include <string>
 
 #include <vector>
 
-struct AABB
+struct AABB : public GameObject
 {
 	vec2 min;
 	vec2 max;
@@ -24,4 +26,7 @@ struct AABB
 	vec2 ClosestPoint(vec2& p);
 
 	void SetToTransformedBox(const MathClasses::Matrix3& m);
+
+	bool operator==(const AABB& rhs);
+	bool operator!=(const AABB& rhs);
 };

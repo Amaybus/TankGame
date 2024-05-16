@@ -2,6 +2,9 @@
 #include "TankPlayer.h"
 #include "Turret.h"
 #include "Bullet.h"
+#include "Obstacle.h"
+#include "AABB.h"
+
 #include "SpriteObject.h"
 #include "Matrix3.h"
 
@@ -19,7 +22,10 @@ public:
 	TankPlayer* player;
 	Turret* turret;
 	Bullet* bullet;
+	Obstacle* obstacle;
+	AABB* bulletAABB;
+	AABB* obstacleAABB;
 
 	std::vector<GameObject*> gameObjects;
-
+	std::vector<AABB> collisionObjs;
 };

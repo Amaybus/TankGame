@@ -3,11 +3,13 @@
 #include "SpriteObject.h"
 #include "Turret.h"
 #include "AABB.h"
+#include "iostream"
 
 class Bullet : public SpriteObject
 {
 public:
 	Bullet();
+	bool IsBulletActive = false;
 
 protected:
 	void OnUpdate(float deltaTime) override;
@@ -17,4 +19,5 @@ protected:
 	float bulletSpeed;
 
 	AABB* aabbBullet;
+
 };

@@ -38,7 +38,6 @@ void AABB::Fit(const vec2* points, unsigned int count)
 
 	for (unsigned int i = 0; i < count; i++)
 	{
-		
 		min = min.Min(min, *points);
 		max = max.Max(max, *points);
 	}
@@ -51,8 +50,15 @@ bool AABB::Overlaps(const vec2& p) const
 
 bool AABB::Overlaps(const AABB& other) const
 {
-	return !(max.x < other.min.x || max.y < other.min.y 
-		  || min.x>other.max.x || min.y > other.max.y);
+	if (this == NULL)
+	{
+		return false;
+	}
+	else
+	{
+		return !(max.x < other.min.x || max.y < other.min.y
+			|| min.x>other.max.x || min.y > other.max.y);
+	}
 }
 
 vec2 AABB::ClosestPoint(vec2& p) 
@@ -169,3 +175,14 @@ void AABB::SetToTransformedBox(const MathClasses::Matrix3& m)
 		max.x += m.m9 * min.x;
 	}
 }
+
+bool AABB::operator==(const AABB& rhs)
+{
+	return (*this == rhs);
+}
+
+bool AABB::operator!=(const AABB& rhs)
+{
+	return !(*this == rhs);
+}
+
