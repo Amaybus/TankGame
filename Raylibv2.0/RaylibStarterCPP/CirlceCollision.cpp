@@ -62,3 +62,13 @@ vec2 CirlceCol::ClosestPoint(vec2 p)
 	}
 	return centre + toPoint;
 }
+
+void CirlceCol::OnDraw()
+{
+	DrawCircle(centre.x, centre.y, 5, GRAY);
+}
+
+void CirlceCol::OnUpdate(float deltaTime)
+{
+	centre = GetParent()->GetWorldPosition();
+}

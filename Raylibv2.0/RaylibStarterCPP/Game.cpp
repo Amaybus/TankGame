@@ -33,6 +33,8 @@ void Game::Update(float deltaTime, float screenWidth, float screenHeight)
 		bullet = new Bullet;
 
 		gameObjects.push_back(bullet);
+
+		gameObjects.push_back(bullet->bulletCol);
 		bullet->SetLocalPosition(turret->GetWorldPosition());
  		bullet->SetLocalRotation(turret->GetWorldRotation());
 	}
@@ -43,7 +45,9 @@ void Game::Update(float deltaTime, float screenWidth, float screenHeight)
 		if (pos.x < 0 || pos.x > screenWidth || pos.y < 0 || pos.y > screenHeight)
 		{
 			toDelete.push_back(bullet);
+			toDelete.push_back(bullet->bulletCol);
 			gameObjects.erase(std::find(gameObjects.begin(), gameObjects.end(), bullet));
+			gameObjects.erase(std::find(gameObjects.begin(), gameObjects.end(), bullet->bulletCol));
 			bullet = nullptr;
 		}
 	}

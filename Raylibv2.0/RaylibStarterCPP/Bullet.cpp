@@ -4,6 +4,9 @@ Bullet::Bullet()
 {
 	Sprite = &bulletSprite;
 	bulletSpeed = 300.0f;
+	bulletCol = new CirlceCol;
+	bulletCol->SetParent(this);
+	bulletCol->radius = this->Sprite->height;
 }
 
 void Bullet::OnUpdate(float deltaTime)

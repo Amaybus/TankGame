@@ -2,9 +2,10 @@
 
 #include "Vector2.h"
 #include "AABB.h"
+#include "GameObject.h"
 #include <vector>
 
-struct CirlceCol
+struct CirlceCol : public GameObject
 {
 	CirlceCol();
 	CirlceCol(vec2 p, float r);
@@ -19,4 +20,7 @@ struct CirlceCol
 
 	vec2 centre;
 	float radius;
+
+	void OnDraw() override;
+	void OnUpdate(float deltaTime) override;
 };

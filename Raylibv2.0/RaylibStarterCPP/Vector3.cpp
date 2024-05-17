@@ -161,6 +161,12 @@ MathClasses::Vector3::operator const float* () const
 	return data;
 }
 
+MathClasses::Vector3::operator vec2 ()
+{
+	return vec2(x, y);
+}
+
+
 Vector3 MathClasses::operator*(Vector3 lhsVec, float rhsNum)
 {
 	Vector3 sum;

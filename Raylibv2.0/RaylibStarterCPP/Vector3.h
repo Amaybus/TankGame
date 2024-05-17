@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Vector2.h"
 #include <cmath>
 #include <string>
 
@@ -41,6 +41,7 @@ namespace MathClasses
 
 		operator float* (); //casting
 		operator const float* () const;
+		operator vec2();
 	};
 
 	Vector3 operator*(Vector3 lhsVec, float rhsNum); // Multiplication rhs float
