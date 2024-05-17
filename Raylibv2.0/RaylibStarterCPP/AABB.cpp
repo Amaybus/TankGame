@@ -193,5 +193,10 @@ void AABB::OnDraw()
 	DrawCircle(corners[1].x, corners[1].y, 5, RED);
 	DrawCircle(corners[2].x, corners[2].y, 5, RED);
 	DrawCircle(corners[3].x, corners[3].y, 5, RED);
-	//DrawCircle(Centre().x, Centre().y, 5, GREEN);
+	DrawCircle(Centre().x, Centre().y, 5, GREEN);
+}
+
+void AABB::OnUpdate(float deltaTime)
+{
+	
 }

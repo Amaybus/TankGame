@@ -10,12 +10,14 @@ void Game::Init()
 
 	gameObjects.push_back(player);
 	gameObjects.push_back(obstacle);
+
 	gameObjects.push_back(obstacle->aabbObstacle); // delete after debugging
+
 	collisionObjs.push_back(*obstacle->aabbObstacle);
 }
 
 void Game::Update(float deltaTime, float screenWidth, float screenHeight)
-{
+ {
 
 	if (toDelete.size() > 0)
 	{
@@ -30,6 +32,8 @@ void Game::Update(float deltaTime, float screenWidth, float screenHeight)
 	{
 		bullet = new Bullet;
 		collisionObjs.push_back(*bullet->aabbBullet);
+
+		bullet->aabbBullet.SetParent(bullet);
 
 		gameObjects.push_back(bullet);
 		gameObjects.push_back(bullet->aabbBullet); // delete after debugging

@@ -1,5 +1,6 @@
 #pragma once
 #include "SpriteObject.h"
+#include "AABB.h"
 
 class TankPlayer : public SpriteObject
 {

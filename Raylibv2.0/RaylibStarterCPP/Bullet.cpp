@@ -4,7 +4,7 @@ Bullet::Bullet()
 {
 	Sprite = &bulletSprite;
 	bulletSpeed = 300.0f;
-	aabbBullet = new AABB(vec2(100, 30), vec2(60, 130));
+	aabbBullet = new AABB(vec2(GetWorldPosition().x, GetWorldPosition().y), vec2(Sprite->width, Sprite->height));
 }
 
 void Bullet::OnUpdate(float deltaTime)
@@ -27,13 +27,6 @@ void Bullet::OnDraw()
 		 { (float)Sprite->width * Origin.x * scale.x, (float)Sprite->height * Origin.y * scale.y },
 		 rotation,
 		 Color(Tint));
-	 //AABB* boundingBox = dynamic_cast<AABB*>(GetChild(0));
-	 //std::vector<vec2> corners= aabbBullet->Corners();
-	 //DrawCircle(corners[0].x, corners[0].y, 5, RED);
-	 //DrawCircle(corners[1].x, corners[1].y, 5, RED);
-	 //DrawCircle(corners[2].x, corners[2].y, 5, RED);
-	 //DrawCircle(corners[3].x, corners[3].y, 5, RED);
-
 }
 
 
