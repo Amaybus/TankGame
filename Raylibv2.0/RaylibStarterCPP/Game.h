@@ -23,8 +23,6 @@ public:
 	Turret* turret;
 	Bullet* bullet;
 	Obstacle* obstacle;
-	AABB* bulletAABB;
-	AABB* obstacleAABB;
 
 	std::vector<GameObject*> gameObjects;
 	std::vector<AABB> collisionObjs;

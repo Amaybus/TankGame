@@ -8,6 +8,8 @@ class Obstacle : public SpriteObject
 public:
 	Obstacle();
 
+	AABB* aabbObstacle;
+
 protected:
 	void OnDraw() override;
 	void OnUpdate(float deltaTime) override;

@@ -9,7 +9,7 @@ class Bullet : public SpriteObject
 {
 public:
 	Bullet();
-	bool IsBulletActive = false;
+	AABB* aabbBullet;
 
 protected:
 	void OnUpdate(float deltaTime) override;
@@ -18,6 +18,10 @@ protected:
 	Texture2D bulletSprite = LoadTexture("res/bulletGreen.png");
 	float bulletSpeed;
 
-	AABB* aabbBullet;
 
 };
+
+//	100, 0
+//  0, 0
+//  0, 100
+//  100, 100

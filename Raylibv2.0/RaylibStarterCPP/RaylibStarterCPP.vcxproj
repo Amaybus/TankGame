@@ -181,6 +181,7 @@
     <ClCompile Include="Matrix3.cpp" />
     <ClCompile Include="Matrix4.cpp" />
     <ClCompile Include="Obstacle.cpp" />
+    <ClCompile Include="SphereCollision.cpp" />
     <ClCompile Include="SpriteObject.cpp" />
     <ClCompile Include="TankPlayer.cpp" />
     <ClCompile Include="Turret.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="Matrix3.h" />
     <ClInclude Include="Matrix4.h" />
     <ClInclude Include="Obstacle.h" />
+    <ClInclude Include="SphereCollision.h" />
     <ClInclude Include="SpriteObject.h" />
     <ClInclude Include="TankPlayer.h" />
     <ClInclude Include="Turret.h" />

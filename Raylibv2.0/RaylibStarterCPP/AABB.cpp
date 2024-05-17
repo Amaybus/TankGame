@@ -25,9 +25,9 @@ std::vector<vec2> AABB::Corners() const
 {
 	std::vector<vec2> corners(4);
 	corners[0] = min;
-	corners[1] = { min.x,min.y };
+	corners[1] = { max.x,min.y };
 	corners[2] = max;
-	corners[3] = { max.x,max.y };
+	corners[3] = { min.x,max.y };
 	return corners;
 }
 
@@ -186,3 +186,12 @@ bool AABB::operator!=(const AABB& rhs)
 	return !(*this == rhs);
 }
 
+void AABB::OnDraw()
+{
+	std::vector<vec2> corners = this->Corners();
+	DrawCircle(corners[0].x, corners[0].y, 5, RED);
+	DrawCircle(corners[1].x, corners[1].y, 5, RED);
+	DrawCircle(corners[2].x, corners[2].y, 5, RED);
+	DrawCircle(corners[3].x, corners[3].y, 5, RED);
+	//DrawCircle(Centre().x, Centre().y, 5, GREEN);
+}

@@ -3,6 +3,7 @@
 Obstacle::Obstacle()
 {
 	SetLocalPosition(100, 100);
+	aabbObstacle = new AABB(vec2(100, 0), vec2(0, 100));
 }
 
 

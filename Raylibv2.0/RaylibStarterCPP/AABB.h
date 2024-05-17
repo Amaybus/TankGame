@@ -3,6 +3,7 @@
 #include "Vector2.h"
 #include "Matrix3.h"
 #include "GameObject.h"
+#include "raylib.h"
 #include <string>
 
 #include <vector>
@@ -29,4 +30,6 @@ struct AABB : public GameObject
 
 	bool operator==(const AABB& rhs);
 	bool operator!=(const AABB& rhs);
+
+	void OnDraw() override;
 };
