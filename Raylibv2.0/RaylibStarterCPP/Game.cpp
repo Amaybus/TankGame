@@ -31,12 +31,8 @@ void Game::Update(float deltaTime, float screenWidth, float screenHeight)
 	if (IsKeyPressed(KEY_SPACE))
 	{
 		bullet = new Bullet;
-		collisionObjs.push_back(*bullet->aabbBullet);
-
-		bullet->aabbBullet.SetParent(bullet);
 
 		gameObjects.push_back(bullet);
-		gameObjects.push_back(bullet->aabbBullet); // delete after debugging
 		bullet->SetLocalPosition(turret->GetWorldPosition());
  		bullet->SetLocalRotation(turret->GetWorldRotation());
 	}

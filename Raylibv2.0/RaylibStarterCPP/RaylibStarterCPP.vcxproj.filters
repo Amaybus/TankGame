@@ -63,6 +63,9 @@
     <ClCompile Include="SphereCollision.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CirlceCollision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Colour.h">
@@ -107,7 +110,7 @@
     <ClInclude Include="Obstacle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SphereCollision.h">
+    <ClInclude Include="CirlceCollision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

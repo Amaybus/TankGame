@@ -40,6 +40,13 @@ namespace MathClasses
 		float Clamp(float t, float a, float b);
 		Vector2 Clamp(Vector2& t, Vector2& a, Vector2& b);
 
+		float DistanceTo(Vector2 rhs);
+		float Cross(Vector2 rhs);
+		Vector2 Normalise();
+		Vector2 Normalised();
+		float Magnitude();
+		float Dot(Vector2 rhs);
+		float MagnitudeSqr();
 	};
 
 	Vector2 operator*(Vector2 lhsVec, float rhsNum); // Multiplication rhs float

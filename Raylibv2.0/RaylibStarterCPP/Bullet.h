@@ -9,7 +9,6 @@ class Bullet : public SpriteObject
 {
 public:
 	Bullet();
-	AABB* aabbBullet;
 
 protected:
 	void OnUpdate(float deltaTime) override;

@@ -121,6 +121,57 @@ Vector2 MathClasses::Vector2::Clamp(Vector2& t, Vector2& a, Vector2& b)
 	return Max(a, Min(b, t));
 }
 
+float MathClasses::Vector2::DistanceTo(Vector2 rhs)
+{
+	Vector2 sum = rhs - *this ;
+	sum.Normalise();
+	return 0.0f;
+}
+
+float MathClasses::Vector2::Cross(Vector2 rhs)
+{
+	return x * rhs.x + y * rhs.y;
+}
+
+Vector2 MathClasses::Vector2::Normalise()
+{
+	float magnitude = this->Magnitude();
+	if (magnitude == 0)
+	{
+		return Vector2();
+	}
+	else
+	{
+		x = x / magnitude;
+		y = y / magnitude;
+
+		return *this;
+	}
+}
+
+Vector2 MathClasses::Vector2::Normalised()
+{
+	Vector2 copy = *this;
+	copy.Normalise();
+
+	return copy;
+}
+
+float MathClasses::Vector2::Magnitude()
+{
+	return sqrtf(x * x + y * y);
+}
+
+float MathClasses::Vector2::Dot(Vector2 rhs)
+{
+	return x * rhs.x + y * rhs.y;
+}
+
+float MathClasses::Vector2::MagnitudeSqr()
+{
+	return x * x + y * y;
+}
+
 float MathClasses::Vector2::Clamp(float t, float a, float b)
 {
 	return Max(a, Min(b, t));

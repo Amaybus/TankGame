@@ -4,7 +4,6 @@ Bullet::Bullet()
 {
 	Sprite = &bulletSprite;
 	bulletSpeed = 300.0f;
-	aabbBullet = new AABB(vec2(GetWorldPosition().x, GetWorldPosition().y), vec2(Sprite->width, Sprite->height));
 }
 
 void Bullet::OnUpdate(float deltaTime)
