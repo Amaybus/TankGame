@@ -16,6 +16,7 @@ class Game
 public:
 	void Init();
 	void Update(float deltaTime, float screenWidth, float screenHeight);
+	void CollisionCheck();
 	void Draw();
 	void Shutdown();
 

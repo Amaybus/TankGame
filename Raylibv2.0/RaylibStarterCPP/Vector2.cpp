@@ -113,7 +113,7 @@ float MathClasses::Vector2::Max(float a, float b) const
 
 Vector2 MathClasses::Vector2::Max(Vector2 lhs, Vector2 rhs)
 {
-	return { Max(lhs.x, rhs.x), Min(lhs.y,rhs.y) };
+	return { Max(lhs.x, rhs.x), Max(lhs.y,rhs.y) };
 }
 
 Vector2 MathClasses::Vector2::Clamp(Vector2& t, Vector2& a, Vector2& b)

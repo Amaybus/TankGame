@@ -56,6 +56,26 @@ void Game::Update(float deltaTime, float screenWidth, float screenHeight)
 	{
 		gameObjects[i]->Update(deltaTime);
 	}
+
+	CollisionCheck();
+}
+
+void Game::CollisionCheck()
+{
+	for (int i = 0; i < collisionObjs.size(); i++)
+	{
+		if (bullet != nullptr)
+		{
+			if (bullet->bulletCol->Overlaps(collisionObjs[i]))
+			{
+				toDelete.push_back(bullet);
+				toDelete.push_back(bullet->bulletCol);
+				gameObjects.erase(std::find(gameObjects.begin(), gameObjects.end(), bullet));
+				gameObjects.erase(std::find(gameObjects.begin(), gameObjects.end(), bullet->bulletCol));
+				bullet = nullptr;
+			}
+		}
+	}
 }
 
 void Game::Draw()
